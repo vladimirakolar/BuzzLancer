@@ -1,4 +1,6 @@
-﻿namespace Assets.Code
+﻿using UnityEngine;
+
+namespace Assets.Code
 {
     public class PlayerController 
     {
@@ -8,6 +10,14 @@
             _baseVelosity,
             _targetVelosity,
             _variableVelosity;
+
+        public Vector3 MausePosition { get; private set; }
+        
+        public float CurrentVelocity { get; private set; }
+
+        public float MaxVariableVelocity { get; set; }
+        
+        public float MinimumVelocity { get; set; }
 
 
 
