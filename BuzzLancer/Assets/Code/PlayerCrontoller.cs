@@ -2,11 +2,11 @@
 {
     public class PlayerCrontoller
     {
-        private readonly Player _player;
+        private readonly Player _igrac;
 
         public PlayerCrontoller(Player player)
         {
-            _player - player;
+            _igrac-player;
             
         }
         

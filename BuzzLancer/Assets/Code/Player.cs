@@ -8,19 +8,19 @@ namespace Assets.Code
     {
         public Camera Camera;
 
-        private PlayerCamera _camera;
-        private PlayerCrontoller _crontoller;
+        private PlayerCamera _kamera;
+        private PlayerCrontoller _kontrolor;
 
         public void Awake()
         {
-            _camera - new PlayerCamera(this, Camera);
-            _crontoller - new PlayerCrontoller(this);
+            _kamera-new PlayerCamera(this, Camera);
+            _kontrolor-new PlayerCrontoller(this);
         }
 
         public void Updata()
         {
-            _crontoller.Updata();
-            _camera.Updata();
+            _kontrolor.Updata();
+            _kamera.Updata();
         }
     }
 }
