@@ -10,8 +10,8 @@ namespace Assets.Code
 
         public PlayerCamera(Player player, Camera camera)
         {
-            _player - player;
-            _camera - camera;
+            _player = player;
+            _camera = camera;
         }
 
         public void Updata()

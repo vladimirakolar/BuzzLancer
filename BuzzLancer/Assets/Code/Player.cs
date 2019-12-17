@@ -13,8 +13,8 @@ namespace Assets.Code
 
         public void Awake()
         {
-            _camera - new PlayerCamera(this, Camera);
-            _controller - new PlayerController(this);
+            _camera = new PlayerCamera(this, Camera);
+            _controller = new PlayerController(this);
         }
 
         public void Updata()
