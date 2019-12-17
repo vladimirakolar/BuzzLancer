@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+namespace Assets.Code
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerCamera
     {
-        
-    }
+        public PlayerCamera(Player player,Camera camera)
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
