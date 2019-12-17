@@ -2,7 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Assets.Code
 {
 
+
+    public class Player : MonoBehaviour
+    {
+
+    }
+     
+        
 }
