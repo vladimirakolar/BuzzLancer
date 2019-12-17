@@ -9,5 +9,10 @@
         {
             _player - player;
         }
+
+        public void Updata()
+         {
+         
+         }
     }
 }
