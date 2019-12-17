@@ -39,12 +39,35 @@ namespace Assets.Code
             Mousesensitivity = new Vector2(700, 700);
             UseRelativeMovement = false;
 
-            _player - player;
+            _player = player;
         }
 
         public void Updata()
          {
-         
+            Screen.lockCursor = UseRelativeMovement;
+
+            if (UseRelativeMovement)
+            {
+                MausePosition += new Vector3(
+                    Input.GetAxis("Mause X") * Time.deltaTime * Mousesensitivity.x
+                    Input.GetAxis("Mouse Y") * Time.deltaTime * Mousesensitivity.y);
+            }
+            else
+                MausePosition = Input.mousePosition;
+
+            UpdataPosition();
+            UpdataRotation();
          }
+
+        private void UpdataPosition()
+        {
+
+        }
+      
+        private void UpdataRotation()
+        {
+
+
+        }
     }
 }
