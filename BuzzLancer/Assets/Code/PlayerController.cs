@@ -82,7 +82,7 @@ namespace Assets.Code
             var mouseMovement = (MausePosition - (new Vector3(Screen.width / 2f, Screen.height / 2f))) * .2f;
 
             if (mouseMovement.sqrMagnitude >= 1)
-                _player.transform.Rotate(new Vector3(-mouseMovement.y, mouseMovement.x, 0) * RotationSpeed);
+                _player.transform.Rotate(new Vector3( -mouseMovement.x, mouseMovement.y, 0) * RotationSpeed);
         }
     }
 }
