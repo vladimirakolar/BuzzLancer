@@ -14,5 +14,10 @@ namespace Assets.Code
             _camera - camera;
         }
 
+        public void Updata()
+        {
+
+        }
+
     }
 }
