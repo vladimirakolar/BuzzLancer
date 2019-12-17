@@ -49,7 +49,7 @@ namespace Assets.Code
             if (UseRelativeMovement)
             {
                 MausePosition += new Vector3(
-                    Input.GetAxis("Mause X") * Time.deltaTime * Mousesensitivity.x
+                    Input.GetAxis("Mause X") * Time.deltaTime * Mousesensitivity.x,
                     Input.GetAxis("Mouse Y") * Time.deltaTime * Mousesensitivity.y);
             }
             else
@@ -61,7 +61,20 @@ namespace Assets.Code
 
         private void UpdataPosition()
         {
+            _variableVelosity = Mathf.Clamp(
+                _variableVelosity + Input.GetAxis("Vertical") * Time.deltaTime * Acceleration,
+                0,
+                MaxVariableVelocity);
 
+            _targetVelosity = _variableVelosity + MinimumVelocity;
+
+            CurrentVelocity = Mathf.Lerp(CurrentVelocity, _targetVelosity, Time.deltaTime * VelacityDanp);
+
+            _player.transform.Translate(
+                0,
+                0,
+                CurrentVelocity * Time.deltaTime,
+                Space.Self );
         }
       
         private void UpdataRotation()
