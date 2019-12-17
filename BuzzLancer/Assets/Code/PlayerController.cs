@@ -25,7 +25,9 @@ namespace Assets.Code
 
         public float RotationSpeed { get; set; }
 
-        
+        public bool UseRelativeMovement { get; set; }
+
+        public Vector3 Mousesensitivity { get; set; }
 
         public PlayerController(Player player)
         {
