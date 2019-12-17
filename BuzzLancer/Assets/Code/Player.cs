@@ -15,10 +15,12 @@ namespace Assets.Code
         {
             _camera - new PlayerCamera(this, Camera);
             _controller - new PlayerController(this);
-
         }
 
+        public void Updata()
+        {
+            _controller.Updata();
+            _camera.Updata();
+        }
     }
-     
-        
 }
