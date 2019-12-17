@@ -7,7 +7,7 @@
         public PlayerCrontoller(Player player)
         {
             _player - player;
-
+            
         }
         
         public void Updata()
