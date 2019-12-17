@@ -27,10 +27,18 @@ namespace Assets.Code
 
         public bool UseRelativeMovement { get; set; }
 
-        public Vector3 Mousesensitivity { get; set; }
+        public Vector2 Mousesensitivity { get; set; }
 
         public PlayerController(Player player)
         {
+            MaxVariableVelocity = 20;
+            Acceleration = 70;
+            VelacityDanp = 20;
+            RotationSpeed = .03f;
+
+            Mousesensitivity = new Vector2(700, 700);
+            UseRelativeMovement = false;
+
             _player - player;
         }
 
