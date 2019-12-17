@@ -19,7 +19,13 @@ namespace Assets.Code
         
         public float MinimumVelocity { get; set; }
 
+        public float Acceleration { get; set; }
 
+        public float VelacityDanp { get; set; }
+
+        public float RotationSpeed { get; set; }
+
+        
 
         public PlayerController(Player player)
         {
