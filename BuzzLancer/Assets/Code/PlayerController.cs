@@ -29,12 +29,18 @@ namespace Assets.Code
 
         public Vector2 MouseSensitivity { get; set; }
 
+        public float AfterburnerModifier { get; set; }
+
+        public float StrafeModifier { get; set; }
+
         public PlayerController(Player player)
         {
             MaxVariableVelocity = 20;
             Acceleration = 150;//70
             VelacityDanp = 60;//20
             RotationSpeed = .3f;//.03f
+            AfterburnerModifier = 50;
+            StrafeModifier = 7;
 
             MouseSensitivity = new Vector2(700, 700);
             UseRelativeMovement = false;
@@ -68,10 +74,13 @@ namespace Assets.Code
 
             _targetVelosity = _variableVelosity + MinimumVelocity;
 
+            if (Input.GetKey(KeyCode.Tab))
+                _targetVelosity += AfterburnerModifier;
+
             CurrentVelocity = Mathf.Lerp(CurrentVelocity, _targetVelosity, Time.deltaTime * VelacityDanp);
 
             _player.transform.Translate(
-                0,
+                Input.GetAxis("Horiyontal")*Time.deltaTime*StrafeModifier,
                 0,
                 CurrentVelocity * Time.deltaTime,
                 Space.Self);
@@ -79,6 +88,13 @@ namespace Assets.Code
       
         private void UpdataRotation()
         {
+
+            if (Input.GetKey("e"))
+                _player.transform.Rotate(0, 0, -90f * Time.deltaTime);
+
+            if (Input.GetKey("q"))
+                _player.transform.Rotate(0, 0, 90f * Time.deltaTime);
+
             var mouseMovement = (MousePosition - (new Vector3(Screen.width / 2f, Screen.height / 2f))) * .2f;
 
             if (mouseMovement.sqrMagnitude >= 1)
