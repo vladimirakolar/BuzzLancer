@@ -16,8 +16,6 @@ namespace Assets.Code
         public PlayerCamera(Player player, Camera camera)
         {
             MovementDanp = 8;
-            RotationDanp = .5f;
-
 
             _player = player;
             _camera = camera;
@@ -28,8 +26,7 @@ namespace Assets.Code
             var position = _player.transform.TransformPoint(0, .5f, -5);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, position, Time.deltaTime * MovementDanp);
 
-            var rotation = Quaternion.LookRotation(_player.transform.position - _camera.transform.position, _player.transform.up);
-            _camera.transform.rotation = Quaternion.Slerp(_player.transform.rotation, rotation, Time.deltaTime * RotationDanp);
+            _camera.transform.LookAt(_player.transform.TransformPoint(0, 0, 50), _player.transform.up);
         }
 
     }
