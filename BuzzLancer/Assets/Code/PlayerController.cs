@@ -11,7 +11,7 @@ namespace Assets.Code
             _targetVelosity,
             _variableVelosity;
 
-        public Vector3 MausePosition { get; private set; }
+        public Vector3 MousePosition { get; private set; }
         
         public float CurrentVelocity { get; private set; }
 
@@ -27,16 +27,16 @@ namespace Assets.Code
 
         public bool UseRelativeMovement { get; set; }
 
-        public Vector2 Mousesensitivity { get; set; }
+        public Vector2 MouseSensitivity { get; set; }
 
         public PlayerController(Player player)
         {
             MaxVariableVelocity = 20;
-            Acceleration = 70;
-            VelacityDanp = 20;
-            RotationSpeed = .03f;
+            Acceleration = 150;//70
+            VelacityDanp = 60;//20
+            RotationSpeed = .3f;//.03f
 
-            Mousesensitivity = new Vector2(700, 700);
+            MouseSensitivity = new Vector2(700, 700);
             UseRelativeMovement = false;
 
             _player = player;
@@ -48,12 +48,12 @@ namespace Assets.Code
 
             if (UseRelativeMovement)
             {
-                MausePosition += new Vector3(
-                    Input.GetAxis("Mause X") * Time.deltaTime * Mousesensitivity.x,
-                    Input.GetAxis("Mouse Y") * Time.deltaTime * Mousesensitivity.y);
+                MousePosition += new Vector3(
+                    Input.GetAxis("Mouse X") * Time.deltaTime * MouseSensitivity.x,
+                    Input.GetAxis("Mouse Y") * Time.deltaTime * MouseSensitivity.y);
             }
             else
-                MausePosition = Input.mousePosition;
+                MousePosition = Input.mousePosition;
 
             UpdataPosition();
             UpdataRotation();
@@ -79,10 +79,10 @@ namespace Assets.Code
       
         private void UpdataRotation()
         {
-            var mouseMovement = (MausePosition - (new Vector3(Screen.width / 2f, Screen.height / 2f))) * .2f;
+            var mouseMovement = (MousePosition - (new Vector3(Screen.width / 2f, Screen.height / 2f))) * .2f;
 
             if (mouseMovement.sqrMagnitude >= 1)
-                _player.transform.Rotate(new Vector3( -mouseMovement.x, mouseMovement.y, 0) * RotationSpeed);
+                _player.transform.Rotate(new Vector3(-mouseMovement.y, mouseMovement.x, 0) * RotationSpeed);
         }
     }
 }
