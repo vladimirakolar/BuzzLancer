@@ -48,7 +48,7 @@ namespace Assets.Code
             _player = player;
         }
 
-        public void Updata()
+        public void Update()
          {
             Screen.lockCursor = UseRelativeMovement;
 
@@ -61,11 +61,11 @@ namespace Assets.Code
             else
                 MousePosition = Input.mousePosition;
 
-            UpdataPosition();
-            UpdataRotation();
+            UpdatePosition();
+            UpdateRotation();
          }
 
-        private void UpdataPosition()
+        private void UpdatePosition()
         {
             _variableVelosity = Mathf.Clamp(
                 _variableVelosity + Input.GetAxis("Vertical") * Time.deltaTime * Acceleration,
@@ -80,13 +80,13 @@ namespace Assets.Code
             CurrentVelocity = Mathf.Lerp(CurrentVelocity, _targetVelosity, Time.deltaTime * VelacityDanp);
 
             _player.transform.Translate(
-                Input.GetAxis("Horiyontal")*Time.deltaTime*StrafeModifier,
+                Input.GetAxis("Horizontal")*Time.deltaTime*StrafeModifier,
                 0,
                 CurrentVelocity * Time.deltaTime,
                 Space.Self);
         }
       
-        private void UpdataRotation()
+        private void UpdateRotation()
         {
 
             if (Input.GetKey("e"))

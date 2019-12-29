@@ -17,10 +17,10 @@ namespace Assets.Code
             _controller = new PlayerController(this);
         }
 
-        public void Updata()
+        public void Update()
         {
-            _controller.Updata();
-            _camera.Updata();
+            _controller.Update();
+            _camera.Update();
         }
     }
 }

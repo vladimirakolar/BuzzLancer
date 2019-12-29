@@ -21,7 +21,7 @@ namespace Assets.Code
             _camera = camera;
         }
 
-        public void Updata()
+        public void Update()
         {
             var position = _player.transform.TransformPoint(0, .5f, -5);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, position, Time.deltaTime * MovementDanp);
