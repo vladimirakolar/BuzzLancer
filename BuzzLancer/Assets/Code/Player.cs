@@ -8,6 +8,7 @@ namespace Assets.Code
     {
         public Camera Camera;
         public Destroyable Destroyable;
+        public BasicWepon BasicWepon;
 
         private PlayerCamera _camera;
         private PlayerController _controller;
