@@ -36,9 +36,9 @@ namespace Assets.Code
         public PlayerController(Player player)
         {
             MaxVariableVelocity = 20;
-            Acceleration = 70;//70
-            VelacityDanp = 20;//20
-            RotationSpeed = .03f;//.03f
+            Acceleration = 70;
+            VelacityDanp = 20;
+            RotationSpeed = .03f;
             AfterburnerModifier = 50;
             StrafeModifier = 7;
 
