@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8682401196406917405}
   - component: {fileID: 8682401196406917407}
   - component: {fileID: 167006924716388035}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8682401198102215710}
   - component: {fileID: 8682401198102215712}
   - component: {fileID: 8682401198102215713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

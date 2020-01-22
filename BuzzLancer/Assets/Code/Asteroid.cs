@@ -14,6 +14,9 @@ namespace Assets.Code
 
         private Vector3 _direction;
 
+        private AsteroidManager _asteroidManager;
+        private Destroyable _destroyable;
+
         public int Level { get; private set; }
 
         public float DistanceSquared { get; private set; }
@@ -24,7 +27,8 @@ namespace Assets.Code
 
         public void Awake()
         {
-            
+            _asteroidManager = (AsteroidManager)FindObjectOfType(typeof(AsteroidManager));
+            _destroyable = GetComponent<Destroyable>();
         }
 
         public void UpdatePlayerPosition(Vector3 playerPosition)
@@ -44,7 +48,7 @@ namespace Assets.Code
                 if (_alpha > 9.9f)
                     _alpha = 1;
 
-                renderer.material.color = new Color(1, 1, 1, _alpha);
+                //Renderer.material.color = new Color(1, 1, 1, _alpha);
             }
 
             transform.Translate(_direction * _velocity * Time.deltaTime);
@@ -53,6 +57,7 @@ namespace Assets.Code
         public void Init(Vector3 position, Vector3 rotation, Vector3 direction, Vector3 scale, float velocity)
         {
             Level = (int)Mathf.Ceil((scale.magnitude - 25f) / 255f * (MaxLevel - 1)) + 1;
+            _destroyable.MaxHealth = _destroyable.Health = Level * 100;
 
             transform.position = position;
             transform.localEulerAngles = rotation;
@@ -70,13 +75,27 @@ namespace Assets.Code
             gameObject.SetActive(true);
 
             _alpha = 0;
-            renderer.material.color = new Color(1, 1, 1, 0);
+           // renderer.material.color = new Color(1, 1, 1, 0);
         }
 
         public void Deactivate()
         {
             IsActive = false;
             gameObject.SetActive(false);
+        }
+
+        public void Destroyed(GameObject from)
+        {
+            _asteroidManager.AsteroidDestroyed(this);
+        }
+
+        public void OnTriggerEnter(Collider collision)
+        {
+            var destroyable = collision.gameObject.FindComponent<Destroyable>();
+            if (destroyable == null)
+                return;
+
+            destroyable.TakeDamage(Level * 50, gameObject);
         }
     }
 }

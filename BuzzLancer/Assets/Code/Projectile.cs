@@ -31,5 +31,16 @@ namespace Assets.Code
 
             transform.Translate(_direction * _wepon.Speed * Time.deltaTime, Space.World);
         }
+
+        public void OnTriggerEnter(Collider collision)
+        {
+
+            var destroyable = collision.GetComponent<Destroyable>();
+            if (destroyable == null)
+                return;
+
+            destroyable.TakeDamage(_wepon.Damage, gameObject);
+            Destroy(gameObject);
+        }
     }
 }

@@ -33,6 +33,26 @@ namespace Assets.Code
             }
         }
 
+        public void AsteroidDestroyed(Asteroid asteroid)
+        {
+            asteroid.Deactivate();
+
+            if (asteroid.Level <= 3)
+                return;
+
+            var toCreate = (int)Mathf.Ceil(asteroid.Level - 3) * Random.Range(1f, 2f);
+
+            for (var i=0; toCreate > 0 && i < _asteroids.Count; i++)
+            {
+                var inactiveAsteroid = _asteroids[i];
+                if (inactiveAsteroid.IsActive)
+                    continue;
+
+                ActivateSubAsteroid(inactiveAsteroid, asteroid.gameObject.transform.position);
+                toCreate--;
+            }
+        }
+
         public void LateUpdate()
         {
             var totalVisible = 0;
@@ -92,6 +112,29 @@ namespace Assets.Code
                 Random.Range(-.5f, 1.5f),
                 Random.Range(-.5f, 1.5f),
                (Random.Range(0f, 1f) * 300) + 150));
+
+            asteroid.Init(position, rotation, direction, scale, velocity);
+        }
+
+        public void ActivateSubAsteroid(Asteroid asteroid, Vector3 spawnNextTo)
+        {
+            asteroid.Activate();
+
+            var rotation = new Vector3(
+                Random.Range(0f, 360f),
+                Random.Range(0f, 360f),
+                Random.Range(0f, 360f));
+
+            var direction = new Vector3(
+                Random.Range(0f, 1f),
+                 Random.Range(0f, 1f),
+                  Random.Range(0f, 1f));
+
+            var scale = new Vector3(Random.Range(15f, 40f), Random.Range(15f, 40f), Random.Range(15f, 40f));
+
+            var velocity = Random.Range(20f, 35f);
+
+            var position = spawnNextTo + direction * 5;
 
             asteroid.Init(position, rotation, direction, scale, velocity);
         }
