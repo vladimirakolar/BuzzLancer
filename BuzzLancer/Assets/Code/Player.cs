@@ -41,6 +41,11 @@ namespace Assets.Code
             Equip(BasicWepon);
         }
 
+        public void Destroyed()
+        {
+            GameManagerInstance.Instance.EndGame(false);
+        }
+
         public void Equip(BasicWepon wepon)
         {
             foreach (var mount in _mounts)

@@ -96,6 +96,8 @@ namespace Assets.Code
                 return;
 
             destroyable.TakeDamage(Level * 50, gameObject);
+            _destroyable.TakeDamage(_destroyable.Health, collision.gameObject);
+            //                                              collider
         }
     }
 }
