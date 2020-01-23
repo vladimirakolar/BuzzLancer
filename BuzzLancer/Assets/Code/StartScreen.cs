@@ -18,6 +18,9 @@ namespace Assets.Code
                 Application.LoadLevel(FirstLevel);
             }
 
+            if (GUILayout.Button("High Scores"))
+                Application.LoadLevel("HihgtScoreScreen");
+
             GUILayout.EndVertical();
         }
     }

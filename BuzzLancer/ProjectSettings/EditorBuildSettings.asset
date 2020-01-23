@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/StartScreen.unity
     guid: 91244a42e41cb864488561b821f141e5
   - enabled: 1
+    path: Assets/Scenes/Screens/HihgtScoreScreen.unity
+    guid: a015d0793bb412d4fafcb40fad2cc62e
+  - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: 02967e6e991fd0d40a0a96bfb6f233ad
   - enabled: 1
