@@ -48,7 +48,7 @@ namespace Assets.Code
                 if (_alpha > 9.9f)
                     _alpha = 1;
 
-                //Renderer.material.color = new Color(1, 1, 1, _alpha);
+              // renderer.material.color = new Color(1, 1, 1, _alpha);
             }
 
             transform.Translate(_direction * _velocity * Time.deltaTime);

@@ -38,7 +38,7 @@ namespace Assets.Code
         public void Equip(BasicWepon wepon)
         {
             foreach (var mount in _mounts)
-                mount.Equals(wepon);
+                mount.Equip(wepon);
         }
 
         public void Update()

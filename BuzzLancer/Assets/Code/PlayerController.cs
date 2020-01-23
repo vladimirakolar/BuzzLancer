@@ -50,7 +50,7 @@ namespace Assets.Code
 
         public void Update()
          {
-            Screen.lockCursor = UseRelativeMovement;
+            Cursor.lockState = CursorLockMode.Confined;
 
             if (UseRelativeMovement)
             {

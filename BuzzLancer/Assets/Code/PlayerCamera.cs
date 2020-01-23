@@ -11,8 +11,6 @@ namespace Assets.Code
 
         public float MovementDanp { get; set; }
 
-        public float RotationDanp { get; set; }
-
         public PlayerCamera(Player player, Camera camera)
         {
             MovementDanp = 8;
