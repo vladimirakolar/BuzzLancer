@@ -31,7 +31,7 @@ namespace Assets.Code
                 return;
             }
                 DidWin = didWin;
-                Application.LoadLevel("EndScreem");
+                Application.LoadLevel("EndSceen");
         }
     }
 }

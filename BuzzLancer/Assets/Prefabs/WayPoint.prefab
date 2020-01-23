@@ -142,7 +142,7 @@ MonoBehaviour:
   Next: {fileID: 0}
   AlphaShader: {fileID: 31, guid: 0000000000000000f000000000000000, type: 0}
   TmeModifier: 10
-  MinimumVelocity: 30
+  MinimumVelocity: 5
 --- !u!136 &3465406583014751046
 CapsuleCollider:
   m_ObjectHideFlags: 0
