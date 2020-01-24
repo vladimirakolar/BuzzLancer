@@ -11,6 +11,8 @@ namespace Assets.Code
         private Vector3 _direction;
         private ProjectalWepon _wepon;
 
+        public GameObject Effect;
+
 
         public void Init(ProjectalWepon wepon, Vector3 direction)
         {
@@ -40,6 +42,8 @@ namespace Assets.Code
                 return;
 
             destroyable.TakeDamage(_wepon.Damage, gameObject);
+
+            Instantiate(Effect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
