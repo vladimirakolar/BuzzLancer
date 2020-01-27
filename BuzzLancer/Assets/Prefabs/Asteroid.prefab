@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effect: {fileID: 4827541291831258298, guid: cd0b77602ba8ac444a3c9520168f9fb3, type: 3}
+  ExplosionClip: {fileID: 8300000, guid: 620e33347f14b6344968fbfe070f29a2, type: 3}
 --- !u!136 &136377788455649288
 CapsuleCollider:
   m_ObjectHideFlags: 0

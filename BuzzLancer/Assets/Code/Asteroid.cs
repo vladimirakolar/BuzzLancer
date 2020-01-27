@@ -18,6 +18,7 @@ namespace Assets.Code
         private Destroyable _destroyable;
 
         public GameObject Effect;
+        public AudioClip ExplosionClip;
 
         public int Level { get; private set; }
 
@@ -88,8 +89,10 @@ namespace Assets.Code
 
         public void Destroyed(GameObject from)
         {
-            Instantiate(Effect, transform.position, transform.rotation);
+            var source = GameExtension.PlayClipAtPoint(transform.position, ExplosionClip);
+            source.rolloffMode = AudioRolloffMode.Linear;
 
+            Instantiate(Effect, transform.position, transform.rotation);
             _asteroidManager.AsteroidDestroyed(this);
         }
 
