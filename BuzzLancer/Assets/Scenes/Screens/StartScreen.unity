@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstLevel: Level1
+  Background: {fileID: 2800000, guid: f4e6ef8e6e701d04e92510fafe58b3c3, type: 3}
 --- !u!1 &1742001706
 GameObject:
   m_ObjectHideFlags: 0
