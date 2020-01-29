@@ -33,8 +33,8 @@ namespace Assets.Code
             {
                 GUILayout.BeginHorizontal(RowStyle);
 
-                GUILayout.Label(score.Name, TextStyle);
-                GUILayout.Label(string.Format("(0) points", score.Points),PointStyle);
+                GUILayout.Label((score.Name), TextStyle);
+                GUILayout.Label(string.Format("{0} points", score.Points),PointStyle);
 
                 GUILayout.EndHorizontal();
             }

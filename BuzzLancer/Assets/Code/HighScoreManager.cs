@@ -14,7 +14,10 @@ namespace Assets.Code
           get
             {
                 if (_instance == null)
-                    _instance = new HighScoreManager();
+                {
+                    HighScoreManager highScoreManager = new HighScoreManager();
+                    _instance = highScoreManager;
+                }
 
                 return _instance;
             }
@@ -71,7 +74,7 @@ namespace Assets.Code
             for (var i=0; i < _scores.Count; i++)
             {
                 var score = _scores[i];
-                PlayerPrefs.SetString(string.Format("HighScore_{0}_Name", i), score.Name);
+                PlayerPrefs.SetString(string.Format("HightScore_{0}_Name", i), score.Name);
                 PlayerPrefs.SetInt(string.Format("HighScore_{0}_Score", i), score.Points);
             }
         }
