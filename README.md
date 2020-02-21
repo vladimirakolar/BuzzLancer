@@ -1,5 +1,5 @@
-## Demo preview ##
-Preview of the game is available on
+## Game ##
+The game can be played on the following links :
 - GitHub page : **[Buzz Lancer](https://vladimirakolar.github.io/BuzzLancer/)**
 - Simmer page : **[Buzz Lancer](https://simmer.io/@VladimiraKolar/buzz-lancer)**
 
@@ -10,14 +10,11 @@ When the game launches we have complete control over the spaceship and weapons.
 The direction in which the spaceship should follow is displayed on the scene. 
 The game features 2D and 3D sounds as well as spike effects. The game is created in Unity program as well as using C# scripts.
 
-## Tools and technologes ##
-### Technologes ###
+## Tools and technologies ##
 * *Unity*
 * *Photoshop*
 * *3DS Max*
 * *Visual Studio*
-
-### Tools ###
 * *3D space*
 * *Demo*
 * *3D animation*
